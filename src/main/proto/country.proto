@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.yourpackage.grpc";
+option java_outer_classname = "CountryServiceProto";
+
+package country;
+
+service CountryService {
+  rpc AddCountries (stream CountryRequest) returns (CountryResponse) {}
+  rpc GetAllCountries (Empty) returns (stream Country) {}
+}
+
+message CountryRequest {
+  string name = 1;
+  string code = 2;
+}
+
+message CountryResponse {
+  int32 count = 1;
+  repeated Country countries = 2;
+}
+
+message Country {
+  string name = 1;
+  string code = 2;
+}
+
+message Empty {}

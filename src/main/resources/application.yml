@@ -1,4 +1,7 @@
 spring:
+  grpc:
+    server:
+      port: 9090
   application:
     name: country
   datasource:

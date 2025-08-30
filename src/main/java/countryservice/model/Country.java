@@ -19,10 +19,13 @@ public class Country {
 
 
     public Country() {
-
     }
 
     public Country(String code, String name) {
+    }
+
+
+    public Country(String code, String name, String capital, Integer population) {
         this.code = code;
         this.name = name;
     }
@@ -49,10 +52,5 @@ public class Country {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Country{id=" + id + ", code='" + code + "', name='" + name + "'}";
     }
 }
