@@ -1,0 +1,22 @@
+type Country {
+    id: ID!
+    code: String!
+    name: String!
+}
+
+type Query {
+    getAllCountries: [Country!]!
+    getCountryByCode(code: String!): Country
+    getCountryByName(name: String!): Country
+    searchCountries(query: String!): [Country!]!
+}
+
+type Mutation {
+    createCountry(code: String!, name: String!): Country!
+    updateCountry(code: String!, newName: String!): Country
+    deleteCountry(code: String!): Boolean!
+}
+
+type Subscription {
+    countryCreated: Country!
+}

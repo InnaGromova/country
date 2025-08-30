@@ -1,9 +1,8 @@
-create extension if not exists "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-create table if not exists "country"
-(
-    id           UUID unique not null default uuid_generate_v1() primary key,
-    code VARCHAR(3) unique not null,
+CREATE TABLE IF NOT EXISTS country (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    code VARCHAR(3) UNIQUE NOT NULL,
     name VARCHAR(100) NOT NULL
 );
 
